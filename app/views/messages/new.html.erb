@@ -1,0 +1,19 @@
+<h1>Messages</h1>
+ 
+<%= form_for @message do |f| %>
+  <% if @message.errors.any? %>
+    <ul>
+    <% @message.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %>
+ 
+  <p><%= f.label :text_message %><br>
+  <%= f.text_field :text%></p>
+ 
+  <p><%= f.label :phone_number %><br>
+  <%= f.text_field :phone%></p>
+ 
+  <%= f.submit %>
+<% end %>
